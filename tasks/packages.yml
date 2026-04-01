@@ -1,0 +1,10 @@
+- name: Install packages
+  package:
+    name: 
+      - htop
+      - curl
+      - git
+      - ipcalc
+      - traceroute
+      - net-tools
+    state: present

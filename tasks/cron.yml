@@ -1,0 +1,6 @@
+- name: Setting up cron job for ansible-pull
+  ansible.builtin.cron:
+    name: "Ansible Pull Cron Job"
+    user: ansible-pull
+    minute: "*/30"
+    job: "/usr/bin/ansible-pull -o -U https://github.com/gurkiratm/ansible_pull.git"

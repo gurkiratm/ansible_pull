@@ -1,0 +1,12 @@
+- name: Creating ansible system user
+  ansible.builtin.user:
+    name: ansible-pull
+    comment: Ansible Pull User
+    state: present
+    system: yes
+
+- name: Setting up passwordless sudo for ansible user
+  ansible.builtin.copy:
+    content: "ansible-pull ALL=(ALL) NOPASSWD:ALL"
+    dest: /etc/sudoers.d/ansible-pull
+    mode: '0440'
