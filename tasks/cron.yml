@@ -3,4 +3,4 @@
     name: "Ansible Pull Cron Job"
     user: ansible-pull
     minute: "*/30"
-    job: "/usr/bin/ansible-pull -o -U https://github.com/gurkiratm/ansible_pull.git"
+    job: "/usr/bin/ansible-pull -o -U https://github.com/gurkiratm/ansible_pull.git > /tmp/ansible-pull.log 2>&1"
